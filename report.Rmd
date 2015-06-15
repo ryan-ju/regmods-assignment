@@ -1,0 +1,22 @@
+---
+title: "Regression Models Assignment"
+output:
+  pdf_document:
+    toc: false
+---
+# Introduction
+Hello world
+
+# Exploratory Data Analysis
+The [pair plots] show that _mpg_ has a strong correlation ($> 0.8$) with _cyl_, _disp_ and _wt_.  The correlation between _mpg_ and _am_ is only 
+
+# Appendix
+### Pair plot of features {#pairs}
+Lighter color means higher mpg.
+```{r, eval=F}
+library(GGally)
+data(mtcars)
+ggpairs(data = mtcars, upper = list(continuous = "points", combo = "blank", discrete = "blank"), lower = list(continuous = "cor", combo = "blank", discrete = "blank"), diag = list(continuous = "bar", discrete = "bar"))
+
+ggpairs(data = mtcars, upper = list(continuous = "blank", combo = "blank", discrete = "blank"), lower = list(continuous = "smooth", combo = "blank", discrete = "blank"), diag = list(continuous = "blank", discrete = "blank"), color = "mpg")
+```
